@@ -36,11 +36,19 @@ string melangeLeMot(string mot){
 
 bool valideLeMot(string mot, string motMelange){
     string response;
+    int nbEssai=5;
     do{
         cout << "le mot melange est :" << motMelange << endl;
+        cout << "Vous avez " << nbEssai << endl;
         cout << "Quel est le mot ?" << endl;
         cin >> response;
+
+        nbEssai--;
     }
-    while (response != mot);
-    return true;
+    while (response != mot && nbEssai != 0 );
+
+    if (response == mot)
+    	return true;
+    else
+    	return false;
 }
